@@ -24,21 +24,21 @@
 
 // ejecutarBoleean()
 
-function boolean () {
+function rechazar() {
     return new Promise((resolve, reject) =>{
         
         setTimeout(() => {
-            const valor= true;
-            if(valor==true){
-            resolve("el valor es positivo")
+            const num= Math.random();
+            if(num<=0.5){
+                resolve(`el número no es valido ${num}`)
             }else{
-            reject("el valor es falso")
+                reject(`el número es valido ${num}`)
             }
         }, 2000);
     })
 }
 
 
-boolean()
+rechazar()
     .then(result=>console.log(result))
     .catch(error=>console.log(error))
